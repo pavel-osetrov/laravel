@@ -16,3 +16,11 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Применение middleware для ограничения частоты запросов к маршруту
+
+Route::middleware('auth:api', 'throttle:60,1')->group(function () {
+    Route::get('profile', function () {
+        //
+    });
+});
