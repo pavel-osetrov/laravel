@@ -86,13 +86,10 @@
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="{{ URL::route('invitations', ['invitation' => 12345, 'answer' => 'yes']) }}">normal</a>
+                    <a href="{{ URL::signedRoute('invitations', ['invitation' => 12345, 'answer' => 'yes']) }}">signed</a>
+                    <a href="{{ URL::temporarySignedRoute('invitations', now()->addHours(4), ['invitation' => 12345, 'answer' => 'yes']) }}">temporarySigned</a>
                 </div>
             </div>
         </div>
